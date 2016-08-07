@@ -19,7 +19,27 @@ eventsApp.controller('EventController', function EventController($scope) {
             city: 'Toronto',
             province: 'Canada'
         },
-        imageUrl: '/img/angularjs-logo.png'
+        imageUrl: '/img/angularjs-logo.png',
+        sessions: [
+            {
+                name: 'Big event',
+                creatorName: 'John Doe',
+                duration: '1 hr',
+                abstract: 'This is the first event'
+            },
+            {
+                name: 'Bigger event',
+                creatorName: 'Jim Boe',
+                duration: '4 hr',
+                abstract: 'Come in for a second one, a long one'
+            },
+            {
+                name: 'Biggest event',
+                creatorName: 'Jane Doe',
+                duration: '8 hr',
+                abstract: 'strap in for an all day event'
+            }
+        ]
     }
 
 });
