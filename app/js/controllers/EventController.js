@@ -10,6 +10,9 @@ We can print anything to page that is within the $scope. Remove this comment aft
 
 eventsApp.controller('EventController', function EventController($scope) {
 
+
+    $scope.buttonDisabled = true;
+
     $scope.event = {
         name: 'Robert Byrne',
         date: '1/1/2013',
@@ -25,21 +28,33 @@ eventsApp.controller('EventController', function EventController($scope) {
                 name: 'Big event',
                 creatorName: 'John Doe',
                 duration: '1 hr',
-                abstract: 'This is the first event'
+                abstract: 'This is the first event',
+                upvote: 0
             },
             {
                 name: 'Bigger event',
                 creatorName: 'Jim Boe',
                 duration: '4 hr',
-                abstract: 'Come in for a second one, a long one'
+                abstract: 'Come in for a second one, a long one',
+                upvote: 0
             },
             {
                 name: 'Biggest event',
                 creatorName: 'Jane Doe',
                 duration: '8 hr',
-                abstract: 'strap in for an all day event'
+                abstract: 'strap in for an all day event',
+                upvote: 0
             }
         ]
     }
+
+    $scope.upVoteSession = function(session) {
+        session.upvote++;
+    };
+
+    $scope.downVoteSession = function(session) {
+        session.upvote--;
+    };
+
 
 });
