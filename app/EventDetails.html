@@ -9,8 +9,39 @@
 <body>
     <div class="container">
 
+        <div class="navbar">
+            <div class="navbar-inner">
+                <ul class="nav">
+
+                </ul>
+            </div>
+        </div>
+
         <div ng-controller="EventController">
-            {{event.name}}
+
+            <!--add ing images in angular js-->
+            <img ng-src="{{event.imageUrl}}" alt="{{event.name}}" />
+            <div class="row">
+                <div class="span1">
+                    <h2>{{event.name}}</h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="span2">
+                    <div><strong>Date:</strong> {{event.date}}</div>
+                    <div><strong>Time:</strong> {{event.time}}</div>
+                </div>
+
+                <div class="span4">
+                    <address>
+                        <strong>Address:</strong><br />
+                        {{event.location.address}}<br />
+                        {{event.location.city}}
+                        {{event.location.province}}
+                    </address>
+                </div>
+            </div>
         </div>
 
     </div>
