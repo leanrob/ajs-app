@@ -24,7 +24,7 @@
             <div class="row">
                 <div class="span1">
                     <!-- <h2 ng-bind="event.name"></h2> -->
-                    <h2 ng-bind-template="{{event.name}} {{event.date}}"></h2>
+                    <h2 ng-bind-template="{{event.name | uppercase }}"</h2>
                 </div>
             </div>
             <!--ng-disabled makes this button be greyed out and disabled-->
@@ -32,7 +32,7 @@
 
             <div class="row">
                 <div class="span2">
-                    <div><strong>Date:</strong> {{event.date}}</div>
+                    <div><strong>Date:</strong> {{ event.date | date:'mediumDate' }}</div>
                     <div><strong>Time:</strong> {{event.time}}</div>
                 </div>
 
@@ -45,12 +45,22 @@
                     </address>
                 </div>
             </div>
+            <div>
+                {{ 3.1415926535 | number:2 }}
+            </div>
+
+
             <hr />
 
             <h3>Sessions:</h3>
+            Order by:
+            <select ng-model="sortorder" class="input-small">
+                <option selected value="name">Name</option>
+                <option selected value="-upvote">Upvotes</option>
+            </select>
             <ul class="thumbnails">
                 <!--This is how we handle repeating events in angularjs-->
-                <li ng-repeat="session in event.sessions">
+                <li ng-repeat="session in event.sessions | orderBy:sortorder | limitTo:10">
                     <div class="row session">
                         <div class="span0 well votingWidget">
                             <!--Upvoting button-->

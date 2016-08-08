@@ -13,6 +13,8 @@ eventsApp.controller('EventController', function EventController($scope) {
 
     $scope.buttonDisabled = true;
 
+    $scope.sortorder = "-upvote";
+
     $scope.event = {
         name: 'Robert Byrne',
         date: '1/1/2013',
