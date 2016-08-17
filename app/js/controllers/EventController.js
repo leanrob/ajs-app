@@ -29,21 +29,21 @@ eventsApp.controller('EventController', function EventController($scope) {
             {
                 name: 'Big event',
                 creatorName: 'John Doe',
-                duration: '1 hr',
+                duration: 1,
                 abstract: 'This is the first event',
                 upvote: 0
             },
             {
                 name: 'Bigger event',
                 creatorName: 'Jim Boe',
-                duration: '4 hr',
+                duration: 2,
                 abstract: 'Come in for a second one, a long one',
                 upvote: 0
             },
             {
                 name: 'Biggest event',
                 creatorName: 'Jane Doe',
-                duration: '8 hr',
+                duration: 4,
                 abstract: 'strap in for an all day event',
                 upvote: 0
             }
